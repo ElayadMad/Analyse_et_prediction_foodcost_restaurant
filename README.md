@@ -36,7 +36,9 @@ L'objectif est d'**optimiser le food cost** et anticiper les consommations futur
 food-cost-optimisation/
 │
 ├── data/
-│   ├── Food_cost_analyse.xlsx        # Données sources (ventes brutes + ventes ajustées + coûts)
+│   └── Factures_fournisseurs_brut    # Registre des commandes effectuer sur l'annnée 2024
+│   └── Donnees_brutes_restaurant     # Les vente du restaurant sur l'année 2024
+│   └── Food_cost_analyse.xlsx        # Données sources (ventes brutes + ventes ajustées + coûts + coûts ajusté )
 │   └── README_data.md                # Description des colonnes et des feuilles Excel
 │
 ├── scripts/
@@ -97,6 +99,22 @@ Ventes Brutes (Excel)
 - **readxl** — Import des données Excel
 
 ---
+
+## Nétoyage des données
+L'entrieter de cette section a été effectuée sur Excel
+
+### 1. Standardisé le nom des produits
+
+Dans cette section, le but majeur est d'avoir le même format pour chauque produit, sans espace, sans majuscule, afin que elle soit standardisé et utilisable. Pour atteindre cette objectif,
+1 J'ai utilisé la fonction UNIQUE() pour faire resortir chaque nom de produit identifier dans ma colonne ingredient.
+2 Manuellemant j'assosie ,dans un tableau de correspondance, la bonne ortigraphe à chaque nom identifié dans l'étape précédante.
+3 j'utiliser la fonction XLOOKUP pour créer une nouvelle colonne avec les noms des produits standarisés.
+
+### 2. Hommogénéiser les prix 
+
+L'objetif ici est d'assossier le bon prix au bon produit en remplissant les cases vides et en corrigeant les prix mal enregistrer. Pour ce faire: 
+1 j'ai fait un tableau de reférence avec les noms standardisés et les bon prix unitaire de chaque item.
+2 utiliser la fonction XLOOKUP() pour créer la nouvelle colonne avec les bons prix
 
 ## 📊 Résultats Clés
 
