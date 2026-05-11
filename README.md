@@ -109,7 +109,7 @@ Dans cette section, le but majeur est d'avoir le même format pour chaque produi
 - J'ai utilisé la fonction UNIQUE() pour faire ressortir chaque nom de produit identifié dans ma colonne ingrédient.
 - Manuellement, j'associe, dans un tableau de correspondance, la bonne orthographe à chaque nom identifié dans l'étape précédente.
 - j'utilise la fonction XLOOKUP pour créer une nouvelle colonne avec les noms des produits standardisés.
-- 
+
 ### 2. Hommogénéiser les prix 
 
 L'objectif ici est d'associer le bon prix au bon produit en remplissant les cases vides et en corrigeant les prix mal enregistrés. Pour ce faire : 
