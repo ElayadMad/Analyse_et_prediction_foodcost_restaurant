@@ -101,20 +101,26 @@ Ventes Brutes (Excel)
 ---
 
 ## Nétoyage des données
-L'entrieter de cette section a été effectuée sur Excel
+L'entièreté de cette section a été effectuée sur Excel.
 
-### 1. Standardisé le nom des produits
+### 1. Standardiser le nom des produits
 
-Dans cette section, le but majeur est d'avoir le même format pour chauque produit, sans espace, sans majuscule, afin que elle soit standardisé et utilisable. Pour atteindre cette objectif,
-1 J'ai utilisé la fonction UNIQUE() pour faire resortir chaque nom de produit identifier dans ma colonne ingredient.
-2 Manuellemant j'assosie ,dans un tableau de correspondance, la bonne ortigraphe à chaque nom identifié dans l'étape précédante.
-3 j'utiliser la fonction XLOOKUP pour créer une nouvelle colonne avec les noms des produits standarisés.
-
+Dans cette section, le but majeur est d'avoir le même format pour chaque produit, sans espace, sans majuscule, afin qu'elle soit standardisée et utilisable. Pour atteindre cet objectif,
+- J'ai utilisé la fonction UNIQUE() pour faire ressortir chaque nom de produit identifié dans ma colonne ingrédient.
+- Manuellement, j'associe, dans un tableau de correspondance, la bonne orthographe à chaque nom identifié dans l'étape précédente.
+- j'utilise la fonction XLOOKUP pour créer une nouvelle colonne avec les noms des produits standardisés.
+- 
 ### 2. Hommogénéiser les prix 
 
-L'objetif ici est d'assossier le bon prix au bon produit en remplissant les cases vides et en corrigeant les prix mal enregistrer. Pour ce faire: 
-1 j'ai fait un tableau de reférence avec les noms standardisés et les bon prix unitaire de chaque item.
-2 utiliser la fonction XLOOKUP() pour créer la nouvelle colonne avec les bons prix
+L'objectif ici est d'associer le bon prix au bon produit en remplissant les cases vides et en corrigeant les prix mal enregistrés. Pour ce faire : 
+- j'ai fait un tableau de référence avec les noms standardisés et les bons prix unitaires de chaque item.
+- utiliser la fonction XLOOKUP() pour créer la nouvelle colonne avec les bons prix.
+
+### 3. Hommogénéiser les quantités
+
+Ici, on cherche à combler les cases vides dans la section quantité de notre base de données : 
+- Prendre le Mode de chaque produit, la fréquence le plus achetée par produit sur l'année 2024.
+- Avec une fonction IF() combiné à la fonction XLOOKUP() je viens remplir les cases blanches par le mode associer au produit. 
 
 ## 📊 Résultats Clés
 
