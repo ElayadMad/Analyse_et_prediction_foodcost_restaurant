@@ -16,13 +16,13 @@ Ce projet simule l'environnement d'un restaurant proposant 5 produits :
 | Coca-Cola | 2,50 $ |
 | 7up | 2,50 $ |
 
-L'objectif est d'**optimiser le food cost** en anticipant les consommations futures afin d'ajuster les commandes de matières premières et de réduire les pertes.
+L'objectif est d'**optimiser le food cost** et anticiper les consommations futures afin d'ajuster les commandes de matières premières et de réduire les pertes.
 
 ---
 
 ## 🎯 Objectifs
 
-1. **Nettoyage des données** — Standardiser les ventes brutes issues du POS (casses, espaces, doublons produits)
+1. **Nettoyage des données** — Standardiser les ventes brutes et les coûts bruts issues du POS (casses, espaces, doublons produits)
 2. **Analyse descriptive** — Étudier les ventes quotidiennes, le ratio coût/vente et les tendances par produit
 3. **Diagnostic de non-corrélation** — Identifier pourquoi les coûts ne suivent pas les ventes à court terme
 4. **Modèle prédictif** — Prédire la consommation totale des 2 prochaines semaines (saisonnalité + historique glissant)
@@ -102,7 +102,9 @@ Ventes Brutes (Excel)
 
 ### 1. Corrélation Coût / Vente
 
-Une analyse du nuage de points et de la Cross-Correlation Function (CCF) révèle que les coûts et les ventes **ne sont pas corrélés de façon contemporaine**. L'explication structurelle est que les commandes fournisseurs sont passées **2 semaines en avance** par rapport aux ventes réelles — les coûts de la semaine `t` correspondent donc aux ventes anticipées de `t+2`.
+Une analyse graphique du ratio coût/vente et de la fonction de corrélation croisée (CCF) révèle que les coûts et les ventes **ne sont pas corrélés de façon contemporaine**. Après la reconstitution de l'inventaire pour identifier la consommation de matières premières du restaurant, on constate un désalignement total entre les commandes d'ingrédients et les ventes.
+
+L'explication structurelle est que les commandes fournisseurs et les ventes sont générées par intelligence artificielle et ne proviennent pas d'un restaurant réel — les coûts de la semaine `t` ne correspondent donc pas aux ventes anticipées de `t+2`. Suite à cette observation, j'ai décidé d'ignorer les commandes de matières premières et d'utiliser uniquement le fichier des ventes pour entraîner un modèle dans le but de prédire la consommation totale en unités sur deux semaines, afin de déterminer les quantités précises à commander à la semaine `t`.
 
 ### 2. Modèle de Consommation (2 semaines)
 
