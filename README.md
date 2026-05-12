@@ -173,7 +173,7 @@ ventes_produit ~ conso_totale
 
 Les intervalles de confiance sont fournis pour chaque prédiction, permettant au gestionnaire de définir une fourchette de commande prudente.
 
-<img width="798" height="337" alt="image" src="https://github.com/user-attachments/assets/74c57856-47d5-4ae8-9e5c-89ccb70066d3" />
+<img width="867" height="350" alt="image" src="https://github.com/user-attachments/assets/e7c26b29-3253-4dab-8972-efdbdb6a5169" />
 
 ---
 
