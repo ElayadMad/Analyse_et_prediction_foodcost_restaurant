@@ -140,10 +140,14 @@ Cependant, une analyse detaillée des ventes de chaque produit nous montre que c
 
 ### 2. Corrélation Coût / Vente
 
-Une analyse graphique du ratio coût/vente et de la fonction de corrélation croisée (CCF sur le logiciel R) révèle que les coûts et les ventes **ne sont pas corrélés de façon contemporaine**. Après la reconstitution de l'inventaire pour identifier la consommation de matières premières du restaurant, on constate un désalignement total entre les commandes d'ingrédients et les ventes au deux semaine.
+Une analyse graphique du ratio coût/vente et de la fonction de corrélation croisée (CCF sur le logiciel R) révèle que les coûts et les ventes **ne sont pas corrélés de façon contemporaine**.
+Deplus, après la reconstitution de l'inventaire pour identifier la consommation de matières premières du restaurant, on constate un désalignement total entre les commandes d'ingrédients et les ventes au deux semaine.
 
 <img width="1484" height="460" alt="image" src="https://github.com/user-attachments/assets/1eb60ad3-7577-4231-9ebb-f0147fc39f7f" />
 
+J'ai, également, regressé les couts de la semaine `t` par les ventes de la semaine `t+2` pour voir si les ventes des 2 prochaine semaine explique l'achat d'ingredient à la semaine présente, en d'autres termes, est ce que le restaurant cherche à indexer ses livraisons d'ingredient sur les possible ventes des 2 prochaines semaines ? 
+<img width="658" height="313" alt="image" src="https://github.com/user-attachments/assets/37b959e6-d496-4c5e-b0d3-dcd65511d738" />
+Comme le montre cette image, mon R-squared est de 4,11% donc on peut en conclure que ma variable X (les ventes des 2 prochaine semaines ) explique les couts à hauteur de 4,11%
 
 
 L'explication structurelle est que les commandes fournisseurs et les ventes sont générées par intelligence artificielle et ne proviennent pas d'un restaurant réel — les coûts de la semaine `t` ne correspondent donc pas aux ventes anticipées de `t+2`. Suite à cette observation, j'ai décidé d'ignorer les commandes de matières premières et d'utiliser uniquement le fichier des ventes pour entraîner un modèle dans le but de prédire la consommation totale en unités sur deux semaines, afin de déterminer les quantités précises à commander à la semaine `t`.
