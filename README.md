@@ -79,7 +79,8 @@ Ventes Brutes (Excel)
   Modèle ML : Régression linéaire multivariée
   Y = Consommation sur les 2 prochaines semaines
   X1 = Moyenne glissante 14j de la consommation passée
-  X2 = Saison (Hiver / Printemps / Été / Automne)
+  X2 = 1 si on est vendredi ou samedi, 0 sinon
+  X3 = Saison (Hiver / Printemps / Été / Automne)
         │
         ▼
   Prédiction par produit via régression individuelle
