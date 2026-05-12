@@ -38,19 +38,12 @@ food-cost-optimisation/
 ├── data/
 │   └── Factures_fournisseurs_brut    # Registre des commandes effectuer sur l'annnée 2024
 │   └── Donnees_brutes_restaurant     # Les vente du restaurant sur l'année 2024
-│   └── Food_cost_analyse.xlsx        # Données sources (ventes brutes + ventes ajustées + coûts + coûts ajusté )
-│   └── README_data.md                # Description des colonnes et des feuilles Excel
 │
 ├── scripts/
 │   └── Analyse_econometrique.R       # Script R complet (nettoyage → analyse → prédiction)
-│
+│   └── Food_cost_analyse.xlsx        # Données sources (ventes brutes + ventes ajustées + coûts + coûts ajusté )
 ├── outputs/
 │   └── (graphiques générés par R)
-│
-├── docs/
-│   └── methodologie.md               # Détail des choix méthodologiques
-│
-├── .gitignore
 └── README.md
 ```
 
