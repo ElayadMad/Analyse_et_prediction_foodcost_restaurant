@@ -108,7 +108,7 @@ L'entièreté de cette section a été effectuée sur Excel.
 Dans cette section, le but majeur est d'avoir le même format pour chaque produit, sans espace, sans majuscule, afin qu'elle soit standardisée et utilisable. Pour atteindre cet objectif,
 - J'ai utilisé la fonction UNIQUE() pour faire ressortir chaque nom de produit identifié dans ma colonne ingrédient.
 - Manuellement, j'associe, dans un tableau de correspondance, la bonne orthographe à chaque nom identifié dans l'étape précédente.
-- j'utilise la fonction XLOOKUP pour créer une nouvelle colonne avec les noms des produits standardisés.
+- j'utilise la fonction XLOOKUP() pour créer une nouvelle colonne avec les noms des produits standardisés.
 
 ### 2. Hommogénéiser les prix 
 
@@ -134,7 +134,7 @@ Les food cost sont significativement stable dans le temps, entre 5k et 7k. Ainsi
 
 <img width="607" height="292" alt="image" src="https://github.com/user-attachments/assets/f41cee48-b059-422c-a911-031932aebf47" />
 
-Cependant, analyse detaillée des ventes de chaque produit nous montre que certains ajustements, dans la livraison des ingrédients, sont possible et nécessaire dans la messure où les ventes ne sont pas constantes dans le temps et donc les foodcost sont adaptable. 
+Cependant, une analyse detaillée des ventes de chaque produit nous montre que certains ajustements, dans la livraison des ingrédients, sont possible et nécessaire dans la messure où les ventes ne sont pas constantes dans le temps et donc les foodcost sont adaptable. Le tableau ci-dessous montre la differnece de vente entre chaque mois. 
 
 <img width="652" height="282" alt="image" src="https://github.com/user-attachments/assets/35c36c9a-0a56-422f-b689-3b831655e066" />
 
@@ -180,24 +180,17 @@ Les intervalles de confiance sont fournis pour chaque prédiction, permettant au
 
 ## 📂 Description des Données
 
-Voir [`data/README_data.md`](data/README_data.md) pour le dictionnaire complet des variables.
-
+ L'intégraliter de mes jeux de données sont générés par l'intelligence artificielle CLaude, ce qui pousse mon annalyse dans ses derniere retranchement, il m'ai compliqué de tirer des conclusions solides mais les objectifs ici étaient d'oppérer un travail de nétoyage d'analyse et de modélisation cohérents. 
 **Feuilles Excel principales :**
-- `Ventes Brutes` — Données POS brutes (ID_Commande, Date, Heure, Zone, Serveur, Produit, Quantité, Prix_Unitaire)
-- `Ventes ajustées` — Données nettoyées avec `Produit standardisé` et `Ventes` calculées
-- Données coûts — Coûts journaliers des ingrédients par date
-
----
-
-## 📖 Méthodologie
-
-Voir [`docs/methodologie.md`](docs/methodologie.md) pour le détail des choix de modélisation.
+- `donnees_brutes_restaurant` — Données POS brutes (ID_Commande, Date, Heure, Zone, Serveur, Produit, Quantité, Prix_Unitaire)
+- `factures_fournisseurs_brut` — Données POS brutes ( ID_Facture, Date, Fournisseur, Ingrédient, Quantite_Livree,Unite, Prix_Unitaire_HT)
 
 ---
 
 ## 👤 Auteur
 
-Projet réalisé dans le cadre d'une analyse de gestion de restaurant fictif.
+Étudiant en sciences économiques à l'universté de Montréal, je cherche a développer mes compétences via la création d'un portfolio.
+Ce Projet est réalisé dans le cadre d'une analyse de gestion de restaurant fictif.
 
 ---
 
