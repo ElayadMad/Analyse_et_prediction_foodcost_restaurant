@@ -166,8 +166,8 @@ Où :
 - `X2`= 1 si on est vendredi ou samedi, 0 sinon
 - `saison` = variable catégorielle (Hiver / Printemps / Été / Automne)
 
-**Exemple de prédiction :** Pour une consommation passée de 135 unités/jour en Printemps, le modèle estime une consommation totale sur 2 semaines, ensuite ventilée sur chaque produit via des régressions individuelles.
-<img width="1160" height="70" alt="image" src="https://github.com/user-attachments/assets/ecd45e08-546a-4026-9027-ac69983741d5" />
+**Exemple de prédiction :** Pour une consommation passée de 135 unités/jour en Printemps durant un vendredi, le modèle estime une consommation totale sur 2 semaines, ensuite ventilée sur chaque produit via des régressions individuelles.
+<img width="1242" height="71" alt="image" src="https://github.com/user-attachments/assets/851e8beb-43fd-4d4a-9a35-0e3ee2e8e89d" />
 
 ### 3. Régressions par Produit
 
