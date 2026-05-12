@@ -163,6 +163,7 @@ Y_consommation_future ~ X1_consommation_passe + saison
 Où :
 - `Y` = somme des commandes sur les 14 jours suivants
 - `X1` = moyenne glissante sur les 14 derniers jours
+- `X2`= 1 si on est vendredi ou samedi, 0 sinon
 - `saison` = variable catégorielle (Hiver / Printemps / Été / Automne)
 
 **Exemple de prédiction :** Pour une consommation passée de 135 unités/jour en Printemps, le modèle estime une consommation totale sur 2 semaines, ensuite ventilée sur chaque produit via des régressions individuelles.
