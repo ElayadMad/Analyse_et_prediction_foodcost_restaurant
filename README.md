@@ -180,10 +180,10 @@ Les intervalles de confiance sont fournis pour chaque prédiction, permettant au
 
 ## 📂 Description des Données
 
- L'intégraliter de mes jeux de données sont générés par l'intelligence artificielle CLaude, ce qui pousse mon annalyse dans ses derniere retranchement, il m'ai compliqué de tirer des conclusions solides mais les objectifs ici étaient d'oppérer un travail de nétoyage d'analyse et de modélisation cohérents. 
+ L'intégraliter de mes jeux de données sont générés par l'intelligence artificielle Claude, ce qui pousse mon annalyse à être incomplete, il m'a été compliqué de tirer des conclusions solides mais les objectifs ici étaient d'oppérer un travail de nétoyage, d'analyse et de modélisation cohérents. 
 **Feuilles Excel principales :**
 - `donnees_brutes_restaurant` — Données POS brutes (ID_Commande, Date, Heure, Zone, Serveur, Produit, Quantité, Prix_Unitaire)
-- `factures_fournisseurs_brut` — Données POS brutes ( ID_Facture, Date, Fournisseur, Ingrédient, Quantite_Livree,Unite, Prix_Unitaire_HT)
+- `factures_fournisseurs_brut` — Données POS brutes ( ID_Facture, Date, Fournisseur, Ingrédient, Quantite_Livree, Unite, Prix_Unitaire_HT)
 
 ---
 
