@@ -36,12 +36,12 @@ L'objectif est d'**optimiser le food cost** et anticiper les consommations futur
 food-cost-optimisation/
 │
 ├── data/
-│   └── Factures_fournisseurs_brut    # Registre des commandes effectuer sur l'annnée 2024
+│   └── Factures_fournisseurs_brut    # Registre des commandes effectuer sur l'année 2024
 │   └── Donnees_brutes_restaurant     # Les vente du restaurant sur l'année 2024
 │
 ├── scripts/
 │   └── Analyse_econometrique.R       # Script R complet (nettoyage → analyse → prédiction)
-│   └── Food_cost_analyse.xlsx        # Données sources (ventes brutes + ventes ajustées + coûts + coûts ajusté )
+│   └── Food_cost_analyse.xlsx        # Données sources (ventes brutes + ventes ajustées + coûts + coûts ajustés )
 ├── outputs/
 │   └── (graphiques générés par R)
 └── README.md
