@@ -94,7 +94,7 @@ Ventes Brutes (Excel)
 
 ---
 
-## Nétoyage des données
+## Nettoyage des données
 L'entièreté de cette section a été effectuée sur Excel.
 
 ### 1. Standardiser le nom des produits
@@ -104,47 +104,48 @@ Dans cette section, le but majeur est d'avoir le même format pour chaque produi
 - Manuellement, j'associe, dans un tableau de correspondance, la bonne orthographe à chaque nom identifié dans l'étape précédente.
 - j'utilise la fonction XLOOKUP() pour créer une nouvelle colonne avec les noms des produits standardisés.
 
-### 2. Hommogénéiser les prix 
+### 2. Homogénéiser les prix 
 
 L'objectif ici est d'associer le bon prix au bon produit en remplissant les cases vides et en corrigeant les prix mal enregistrés. Pour ce faire : 
 - j'ai fait un tableau de référence avec les noms standardisés et les bons prix unitaires de chaque item.
 - utiliser la fonction XLOOKUP() pour créer la nouvelle colonne avec les bons prix.
 
-### 3. Hommogénéiser les quantités
+### 3. Homogénéiser les quantités
 
 Ici, on cherche à combler les cases vides dans la section quantité de notre base de données : 
 - Prendre le Mode de chaque produit, la fréquence le plus achetée par produit sur l'année 2024.
-- Avec une fonction IF() combiné à la fonction XLOOKUP() je viens remplir les cases blanches par le mode associer au produit. 
+- Avec une fonction IF() combiné à la fonction XLOOKUP(), je viens remplir les cases blanches par le mode associé au produit. 
 
 ## 📊 Résultats Clés et visualisation 
 
 ### 1. Analyse des foodcosts 
-L'analyse effectuée dans cette est le premier plan du scene plus profonde, apres avoir mis en lumière les variations de la propention du chiffre d'affaire allouée à l'achat de matiere premiere (graphique 1) 
+L'analyse effectuée dans cet est le premier plan du scène plus profonde, après avoir mis en lumière les variations de la proportion du chiffre d'affaires allouée à l'achat de matière première (graphique 1) 
 
 <img width="521" height="290" alt="image" src="https://github.com/user-attachments/assets/03d3b840-11a3-4ef1-9625-bab9764a8701" />
 
-On remarque que Les varations du ratio foodcost peuvent être expliquées seulement par les variations du chiffre d'affaire mensuel.
-Les food cost sont significativement stable dans le temps, entre 5k et 7k. Ainsi les augmentations du ratio est du intuitivement à une baisse du chiffre d'affaire. 
+OOn remarque que les variations du ratio foodcost peuvent être expliquées seulement par les variations du chiffre d'affaires mensuel.
+Les foodcost sont significativement stable dans le temps, entre 5k et 7k. Ainsi, les augmentations du ratio sont du intuitivement à une baisse du chiffre d'affaires. 
 
 <img width="607" height="292" alt="image" src="https://github.com/user-attachments/assets/f41cee48-b059-422c-a911-031932aebf47" />
 
-Cependant, une analyse detaillée des ventes de chaque produit nous montre que certains ajustements, dans la livraison des ingrédients, sont possible et nécessaire dans la messure où les ventes ne sont pas constantes dans le temps et donc les foodcost sont adaptable. Le tableau ci-dessous montre la differnece de vente entre chaque mois. 
+Cependant, une analyse détaillée des ventes de chaque produit nous montre que certains ajustements, dans la livraison des ingrédients, sont possibles et nécessaires dans la mesure où les ventes ne sont pas constantes dans le temps et donc les foodcost sont adaptable. Le tableau ci-dessous montre la différence de vente entre chaque mois. 
 
 <img width="652" height="282" alt="image" src="https://github.com/user-attachments/assets/35c36c9a-0a56-422f-b689-3b831655e066" />
 
 ### 2. Corrélation Coût / Vente
 
 Une analyse graphique du ratio coût/vente et de la fonction de corrélation croisée (CCF sur le logiciel R) révèle que les coûts et les ventes **ne sont pas corrélés de façon contemporaine**.
-Deplus, après la reconstitution de l'inventaire pour identifier la consommation de matières premières du restaurant, on constate un désalignement total entre les commandes d'ingrédients et les ventes au deux semaine.
+De plus, après la reconstitution de l'inventaire pour identifier la consommation de matières premières du restaurant, on constate un désalignement total entre les commandes d'ingrédients et les ventes aux deux semaines.
 
 <img width="1484" height="460" alt="image" src="https://github.com/user-attachments/assets/1eb60ad3-7577-4231-9ebb-f0147fc39f7f" />
 
-J'ai, également, regressé les couts de la semaine `t` par les ventes de la semaine `t+2` pour voir si les ventes des 2 prochaine semaine explique l'achat d'ingredient à la semaine présente, en d'autres termes, est ce que le restaurant cherche à indexer ses livraisons d'ingredient sur les possible ventes des 2 prochaines semaines ? 
+J'ai, également, régresse les coûts de la semaine `t` par les ventes de la semaine `t+2` pour voir si les ventes des 2 prochaines semaines expliquent l'achat d'ingrédient à la semaine présente, en d'autres termes, est ce que le restaurant cherche à indexer ses livraisons d'ingrédient sur les possibles ventes des 2 prochaines semaines ? 
+
 <img width="658" height="313" alt="image" src="https://github.com/user-attachments/assets/37b959e6-d496-4c5e-b0d3-dcd65511d738" />
-Comme le montre cette image, mon R-squared est de 4,11% donc on peut en conclure que ma variable X (les ventes des 2 prochaine semaines ) explique les couts à hauteur de 4,11%
 
+Comme le montre cette image, mon R-squared est de 4,11 % donc on peut en conclure que ma variable X (les ventes des 2 prochaines semaines) explique les coûts à hauteur de 4,11 %
 
-L'explication structurelle est que les commandes fournisseurs et les ventes sont générées par intelligence artificielle et ne proviennent pas d'un restaurant réel — les coûts de la semaine `t` ne correspondent donc pas aux ventes anticipées de `t+2`. Suite à cette observation, j'ai décidé d'ignorer les commandes de matières premières et d'utiliser uniquement le fichier des ventes pour entraîner un modèle dans le but de prédire la consommation totale en unités sur deux semaines, afin de déterminer les quantités précises à commander à la semaine `t`.
+L'explication structurelle est que les commandes fournisseur et les ventes sont générées par intelligence artificielle et ne proviennent pas d'un restaurant réel — les coûts de la semaine `t` ne correspondent donc pas aux ventes anticipées de `t+2`. Suite à cette observation, j'ai décidé d'ignorer les commandes de matières premières et d'utiliser uniquement le fichier des ventes pour entraîner un modèle dans le but de prédire la consommation totale en unités sur deux semaines, afin de déterminer les quantités précises à commander à la semaine `t`.
 
 ### 2. Modèle de Consommation (2 semaines)
 
@@ -179,7 +180,7 @@ Les intervalles de confiance sont fournis pour chaque prédiction, permettant au
 
 ## 📂 Description des Données
 
- L'intégraliter de mes jeux de données sont générés par l'intelligence artificielle Claude, ce qui pousse mon annalyse à être incomplete, il m'a été compliqué de tirer des conclusions solides mais les objectifs ici étaient d'oppérer un travail de nétoyage, d'analyse et de modélisation cohérents. 
+ L'intégralité de mes jeux de données est générée par l'intelligence artificielle Claude, ce qui pousse mon analyse à être incomplète, il m'a été compliqué de tirer des conclusions solides, mais les objectifs ici étaient d'opérer un travail de nettoyage, d'analyse et de modélisation cohérents.  
 **Feuilles Excel principales :**
 - `donnees_brutes_restaurant` — Données POS brutes (ID_Commande, Date, Heure, Zone, Serveur, Produit, Quantité, Prix_Unitaire)
 - `factures_fournisseurs_brut` — Données brutes ( ID_Facture, Date, Fournisseur, Ingrédient, Quantite_Livree, Unite, Prix_Unitaire_HT)
@@ -188,8 +189,8 @@ Les intervalles de confiance sont fournis pour chaque prédiction, permettant au
 
 ## 👤 Auteur
 
-Étudiant en sciences économiques à l'universté de Montréal, je cherche a développer mes compétences via la création d'un portfolio.
-Ce Projet est réalisé dans le cadre d'une analyse de gestion de restaurant fictif.
+Étudiant en sciences économiques à l'université de Montréal, je cherche à développer mes compétences via la création d'un portfolio.
+Ce projet est réalisé dans le cadre d'une analyse de gestion de restaurant fictif.
 
 ---
 
