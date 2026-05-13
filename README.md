@@ -152,7 +152,7 @@ L'explication structurelle est que les commandes fournisseur et les ventes sont 
 Le modèle retenu est une régression linéaire de la forme :
 
 ```
-Y_consommation_future ~ X1_consommation_passe + saison
+Y_consommation_future ~ X1_consommation_passe + X2_weekend + saison
 ```
 
 Où :
